@@ -56,8 +56,6 @@ public class Main {
 			// closes input
 			in.close();
 		} else if (choice == 1) {
-			// closes input
-			in.close();
 			new ClientMain().start();
 		} else {
 			// closes input
