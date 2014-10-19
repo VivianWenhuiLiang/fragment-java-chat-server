@@ -58,40 +58,32 @@ public class ServerMain {
 				}
 			}).start();
 
-			// start local command thread
-			new Thread(new Runnable() {
-
-				@Override
-				public void run() {
-
-					// Loop that runs local server functions
-					while (true) {
-						System.out
-								.println("Server commands thread started.\n\tType \"help\" to list commands");
-						while (!in.hasNextLine()) {
-						}
-						String cmd = in.nextLine();
-						if (cmd.equals("help")) {
-							System.out
-									.println("Commands:\n\thelp\tthis help text\n\tstop\tshutdown the server");
-						} else if (cmd.equals("quit")) {
-							System.out.println("Stopping input.");
-							in.close();
-							System.out.println("Stopping socket.");
-							try {
-								sSocket.close();
-							} catch (IOException e) {
-								System.err.println("Error closing socket.");
-							}
-							System.out.println("Stopping server.\n\nBye!");
-							System.exit(0);
-						}
+			// Loop that runs local server functions
+			System.out
+					.println("Server commands thread started.\n\tType \"help\" to list commands");
+			while (true) {
+				String cmd = in.nextLine();
+				if (cmd.equals("help")) {
+					System.out
+							.println("Commands:\n\thelp\tthis help text\n\tstop\tshutdown the server");
+				} else if (cmd.equals("quit")) {
+					System.out.println("Stopping input.");
+					in.close();
+					System.out.println("Stopping socket.");
+					try {
+						sSocket.close();
+					} catch (IOException e) {
+						System.err.println("Error closing socket.");
 					}
+					System.out.println("Stopping server.\n\nBye!");
+					System.exit(0);
 				}
-			}).start();
+			}
 
 		} catch (IOException e) {
 			System.out.println("Error: " + e);
+		}finally{
+			in.close();
 		}
 	}
 
