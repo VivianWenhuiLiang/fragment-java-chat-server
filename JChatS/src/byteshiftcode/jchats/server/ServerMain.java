@@ -74,7 +74,7 @@ public class ServerMain {
 						if (cmd.equals("help")) {
 							System.out
 									.println("Commands:\n\thelp\tthis help text\n\tstop\tshutdown the server");
-						} else if (cmd.equals("help")) {
+						} else if (cmd.equals("quit")) {
 							System.out.println("Stopping input.");
 							in.close();
 							System.out.println("Stopping socket.");
