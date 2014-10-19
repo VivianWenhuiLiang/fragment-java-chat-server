@@ -109,7 +109,7 @@ public class ServerMain {
 						new InputStreamReader(threadSocket.getInputStream()));
 
 				// Tell the client that he/she has connected
-				output.println("You have connected to:" + serverName + "at: "
+				output.println("You have connected to:" + serverName + " at: "
 						+ new Date());
 
 				while (true) {
