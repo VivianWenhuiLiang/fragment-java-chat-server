@@ -50,6 +50,8 @@ public class ServerMain {
 
 							// Start the thread!
 							new Thread(clientThread).start();
+							System.out.println("Started Thread for: "
+									+ socket.getInetAddress());
 						} catch (IOException e) {
 							System.out.println("Error: " + e);
 						}
