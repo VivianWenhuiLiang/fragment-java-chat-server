@@ -13,19 +13,22 @@ public class Main {
 		// program starts here
 		System.out.println("Welcome to JChatS");
 		// prompt input for starting a server or connecting to one
-		int choice;
+		int choice = -1;
 		Scanner in = new Scanner(System.in);
-		// prompt
-		System.out
-				.println("Would you like to:\n\t(0) Run a server.\n\t(1) Connect to a server.");
-		// reads choice
-		try {
-			choice = in.nextInt();
-		} catch (InputMismatchException ime) {
+		do {
+			// prompt
 			System.out
-					.println("Not a legal input, the police have been dispatched to your location (Ha Ha, kidding).");
-			System.exit(-1);
-		}
+					.println("Would you like to:\n\t(0) Run a server.\n\t(1) Connect to a server.");
+			// reads choice
+			try {
+				choice = in.nextInt();
+			} catch (InputMismatchException ime) {
+				System.out
+						.println("Not a legal input, the police have been dispatched to your location (Ha Ha, kidding).");
+				System.exit(-1);
+			}
+		} while (!(choice == 0 | choice == 1));
+
 		// closes input
 		in.close();
 	}
