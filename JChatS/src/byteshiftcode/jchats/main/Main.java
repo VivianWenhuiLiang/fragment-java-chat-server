@@ -22,14 +22,46 @@ public class Main {
 			// reads choice
 			try {
 				choice = in.nextInt();
+				in.nextLine();
 			} catch (InputMismatchException ime) {
 				System.out
 						.println("Not a legal input, the police have been dispatched to your location (Ha Ha, kidding).");
 				System.exit(-1);
 			}
 		} while (!(choice == 0 | choice == 1));
-
-		// closes input
-		in.close();
+		// giant if
+		if (choice == 0) {
+			String confirm = "";
+			// prompt
+			System.out
+					.println("Are you sure you want to start a server?\n\t[ yes / (no) ]");
+			// reads choice
+			try {
+				confirm = in.nextLine();
+			} catch (InputMismatchException ime) {
+				System.out
+						.println("Not a legal input, the police have been dispatched to your location (Ha Ha, kidding).");
+				System.exit(-1);
+			}
+			// closes input
+			in.close();
+			// see if it is "yes" or "Yes or "YES""
+			if (confirm.equals("yes") | confirm.equals("Yes")
+					| confirm.equals("YES")) {
+				// TODO start server
+				System.out.println("TODO start server");
+			}else{
+				System.out.println("Not starting server.");
+			}
+		} else if (choice == 1) {
+			// closes input
+			in.close();
+			// TODO start client
+			System.out.println("TODO start client");
+		} else {
+			// closes input
+			in.close();
+			System.exit(-1);
+		}
 	}
 }
