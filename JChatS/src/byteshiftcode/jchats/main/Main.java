@@ -3,6 +3,9 @@ package byteshiftcode.jchats.main;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import byteshiftcode.jchats.client.ClientMain;
+import byteshiftcode.jchats.server.ServerMain;
+
 /**
  * class run at start of program, will allow both arguments and console prompts
  * to switch to client or server
@@ -48,16 +51,14 @@ public class Main {
 			// see if it is "yes" or "Yes or "YES""
 			if (confirm.equals("yes") | confirm.equals("Yes")
 					| confirm.equals("YES")) {
-				// TODO start server
-				System.out.println("TODO start server");
+				new ServerMain().start();
 			}else{
 				System.out.println("Not starting server.");
 			}
 		} else if (choice == 1) {
 			// closes input
 			in.close();
-			// TODO start client
-			System.out.println("TODO start client");
+			new ClientMain().start();
 		} else {
 			// closes input
 			in.close();
