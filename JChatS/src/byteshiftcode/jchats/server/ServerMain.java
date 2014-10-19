@@ -68,6 +68,8 @@ public class ServerMain {
 					while (true) {
 						System.out
 								.println("Server commands thread started.\n\tType \"help\" to list commands");
+						while (!in.hasNextLine()) {
+						}
 						String cmd = in.nextLine();
 						if (cmd.equals("help")) {
 							System.out
