@@ -46,15 +46,15 @@ public class Main {
 						.println("Not a legal input, the police have been dispatched to your location (Ha Ha, kidding).");
 				System.exit(-1);
 			}
-			// closes input
-			in.close();
 			// see if it is "yes" or "Yes or "YES""
 			if (confirm.equals("yes") | confirm.equals("Yes")
 					| confirm.equals("YES")) {
 				new ServerMain().start();
-			}else{
+			} else {
 				System.out.println("Not starting server.");
 			}
+			// closes input
+			in.close();
 		} else if (choice == 1) {
 			// closes input
 			in.close();
