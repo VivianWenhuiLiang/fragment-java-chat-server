@@ -41,7 +41,7 @@ public class ClientMain {
 				if (userInput.startsWith("/")) {
 					if (userInput.equals("/help")) {
 						System.out
-								.println("commands:\n\t/help\tthis help text\n\tquit\tdisconects and quits client");
+								.println("commands:\n\t/help\tthis help text\n\t/quit\tdisconects and quits client");
 					} else if (userInput.equals("/quit")) {
 						System.out.println("Disconecting");
 						System.out.println("Closing input");
